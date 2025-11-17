@@ -1,15 +1,9 @@
 package com.reis.ecommerce.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.MappedSuperclass;
-import jakarta.persistence.PreUpdate;
+import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
-
 
 /**
  * Tüm entity'lerde ortak olacak alanlar.
@@ -19,7 +13,6 @@ import org.springframework.data.annotation.Id;
 @MappedSuperclass
 @Getter
 @Setter
-
 public abstract class BaseEntity {
 
   /**
