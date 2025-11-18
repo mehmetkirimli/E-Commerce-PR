@@ -16,6 +16,7 @@ public enum MessageEnum {
   BAD_REQUEST("Bad request"),
   ALREADY_EXISTS("Record already exists"),
 
+  CONFLICT("Version conflict! The record was modified by another user."),
   STOCK_NOT_AVAILABLE("Stock not available"),
   CART_EMPTY("Cart is empty"),
   PAYMENT_FAILED("Payment failed");
