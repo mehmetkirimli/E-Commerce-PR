@@ -4,7 +4,9 @@ import com.reis.ecommerce.dto.product.ProductListResponse;
 import com.reis.ecommerce.dto.product.ProductRequest;
 import com.reis.ecommerce.dto.product.ProductResponse;
 import com.reis.ecommerce.model.Product;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ProductMapper
 {
   /**

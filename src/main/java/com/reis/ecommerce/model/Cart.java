@@ -1,6 +1,7 @@
 package com.reis.ecommerce.model;
 
 import jakarta.persistence.*;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -18,16 +19,20 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Cart extends BaseEntity
 {
-  @Column(nullable = false)
   private Long userId;
 
-  /**
-   * Cart → CartItem ilişkisi.
-   * Sepette birden fazla ürün olabilir.
-   * Cascade.ALL → Cart silinirse item'lar da silinir.
-   * OrphanRemoval → item listeden çıkarılırsa DB’den silinir.
-   */
+  private BigDecimal totalPrice;
+
   @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true)
-  @Builder.Default
   private List<CartItem> items = new ArrayList<>();
+
+  public void addItem(CartItem item) {
+    items.add(item);
+    item.setCart(this);
+  }
+
+  public void removeItem(CartItem item) {
+    items.remove(item);
+    item.setCart(null);
+  }
 }

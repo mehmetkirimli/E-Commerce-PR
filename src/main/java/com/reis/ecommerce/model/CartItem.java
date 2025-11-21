@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name="cart_items")
@@ -16,26 +17,13 @@ import lombok.Setter;
 @Builder
 public class CartItem extends BaseEntity
 {
-  /**
-   * Hangi ürünü tuttuğunu gösterir.
-   * Bir CartItem sadece 1 ürünü temsil eder.
-   */
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "product_id", nullable = false)
-  private Product product;
+  private Long productId;
 
-  /**
-   * Cart ile ManyToOne ilişkisi:
-   * Bir sepetin içinde birçok CartItem vardır.
-   */
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "cart_id", nullable = false)
-  private Cart cart;
-
-  /**
-   * Üründen sepete kaç adet eklendi.
-   */
-  @Column(nullable = false)
   private Integer quantity;
 
+  private BigDecimal unitPrice;
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "cart_id")
+  private Cart cart;
 }
