@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class HomeController
 {
   @GetMapping("/")
-  public String redirectToSwagger() {
-    return "redirect:/swagger-ui/index.html";
+  public String home(){
+    return "E-Commerce API is running";
   }
 
 }
