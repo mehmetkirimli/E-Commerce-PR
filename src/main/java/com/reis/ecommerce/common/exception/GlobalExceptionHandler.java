@@ -14,10 +14,18 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import java.util.HashMap;
 import java.util.Map;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 @Slf4j
 @ControllerAdvice
 public class GlobalExceptionHandler {
+
+  @ExceptionHandler(org.springframework.web.servlet.resource.NoResourceFoundException.class)
+  public ResponseEntity<ApiResponse<?>> handleNotFound(NoResourceFoundException ex)
+  {
+    ApiResponse<?> response = new ApiResponse<>(false, "Resource not found", null);
+    return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+  }
 
   /**
    * ⭐ Validation (@Valid) hataları

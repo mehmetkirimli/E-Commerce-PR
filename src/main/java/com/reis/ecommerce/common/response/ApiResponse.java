@@ -2,11 +2,15 @@ package com.reis.ecommerce.common.response;
 
 
 import com.reis.ecommerce.common.enumerations.MessageEnum;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class ApiResponse<T> {
 
   private boolean success;
