@@ -20,12 +20,15 @@ import org.springframework.web.servlet.resource.NoResourceFoundException;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
+  /*
   @ExceptionHandler(org.springframework.web.servlet.resource.NoResourceFoundException.class)
   public ResponseEntity<ApiResponse<?>> handleNotFound(NoResourceFoundException ex)
   {
     ApiResponse<?> response = new ApiResponse<>(false, "Resource not found", null);
     return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
   }
+
+   */
 
   /**
    * ⭐ Validation (@Valid) hataları
