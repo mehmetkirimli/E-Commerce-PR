@@ -27,7 +27,7 @@ public class ProductServiceImpl implements IProductService
   @Override
   @Retry(name = "productRetry") // Resilience4j
   @CacheEvict(value = "product_list", allEntries = true)
-  public ApiResponse<ProductResponse> createProduct(ProductRequest request)
+  public ApiResponse<ProductResponseDto> createProduct(ProductRequestDto request)
   {
     if (productRepository.existsByName(request.getName()))
     {
@@ -45,7 +45,7 @@ public class ProductServiceImpl implements IProductService
   @Retry(name = "productRetry")
   @Transactional
   @CacheEvict(value = "product_list", allEntries = true)
-  public ApiResponse<ProductResponse> updateProduct(Long id, ProductRequest request) {
+  public ApiResponse<ProductResponseDto> updateProduct(Long id, ProductRequestDto request) {
 
     Product product = productRepository.findById(id)
         .orElse(null);
@@ -87,7 +87,7 @@ public class ProductServiceImpl implements IProductService
    * Ürün detayını getir
    */
   @Override
-  public ApiResponse<ProductResponse> getProduct(Long id) {
+  public ApiResponse<ProductResponseDto> getProduct(Long id) {
 
     Product product = productRepository.findById(id)
         .orElse(null);
@@ -106,9 +106,9 @@ public class ProductServiceImpl implements IProductService
    */
   @Override
   @Cacheable(value = "product_list")
-  public ApiResponse<List<ProductListResponse>> getAllProducts() {
+  public ApiResponse<List<ProductListResponseDto>> getAllProducts() {
 
-    List<ProductListResponse> list = productRepository.findAll()
+    List<ProductListResponseDto> list = productRepository.findAll()
         .stream()
         .map(ProductMapper::toListResponse)
         .collect(Collectors.toList());

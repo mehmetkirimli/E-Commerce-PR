@@ -6,7 +6,7 @@ import lombok.Getter;
 
 @Getter
 @Builder
-public class CartItemResponse {
+public class CartItemResponseDto {
   private Long productId;
   private Integer quantity;
   private BigDecimal unitPrice;

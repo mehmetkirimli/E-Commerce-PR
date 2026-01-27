@@ -20,7 +20,7 @@ public class ProductController {
    * Create Product
    */
   @PostMapping
-  public ApiResponse<ProductResponse> createProduct(@RequestBody @Valid ProductRequest request) {
+  public ApiResponse<ProductResponseDto> createProduct(@RequestBody @Valid ProductRequestDto request) {
     return productService.createProduct(request);
   }
 
@@ -28,9 +28,9 @@ public class ProductController {
    * Update Product
    */
   @PutMapping("/{id}")
-  public ApiResponse<ProductResponse> updateProduct(
+  public ApiResponse<ProductResponseDto> updateProduct(
       @PathVariable Long id,
-      @RequestBody @Valid ProductRequest request
+      @RequestBody @Valid ProductRequestDto request
   ) {
     return productService.updateProduct(id, request);
   }
@@ -47,7 +47,7 @@ public class ProductController {
    * Get Product by Id
    */
   @GetMapping("/{id}")
-  public ApiResponse<ProductResponse> getProduct(@PathVariable Long id) {
+  public ApiResponse<ProductResponseDto> getProduct(@PathVariable Long id) {
     return productService.getProduct(id);
   }
 
@@ -55,7 +55,7 @@ public class ProductController {
    * List Products
    */
   @GetMapping
-  public ApiResponse<List<ProductListResponse>> getAllProducts() {
+  public ApiResponse<List<ProductListResponseDto>> getAllProducts() {
     return productService.getAllProducts();
   }
 }

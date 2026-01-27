@@ -3,8 +3,8 @@ package com.reis.ecommerce.service.cart;
 import com.reis.ecommerce.common.response.ApiResponse;
 import com.reis.ecommerce.common.mapper.CartMapper;
 import com.reis.ecommerce.common.enumerations.MessageEnum;
-import com.reis.ecommerce.dto.cart.AddToCartRequest;
-import com.reis.ecommerce.dto.cart.CartResponse;
+import com.reis.ecommerce.dto.cart.AddToCartRequestDto;
+import com.reis.ecommerce.dto.cart.CartResponseDto;
 import com.reis.ecommerce.model.Cart;
 import com.reis.ecommerce.model.CartItem;
 import com.reis.ecommerce.repository.CartRepository;
@@ -28,7 +28,7 @@ public class CartServiceImpl implements ICartService {
    * varsa içine item ekler.
    */
   @Override
-  public ApiResponse<CartResponse> addToCart(AddToCartRequest request) {
+  public ApiResponse<CartResponseDto> addToCart(AddToCartRequestDto request) {
 
     // Kullanıcının cart'ı var mı?
     Cart cart = cartRepository.findByUserId(request.getUserId())
@@ -70,7 +70,7 @@ public class CartServiceImpl implements ICartService {
    * Sepetten ürün silme
    */
   @Override
-  public ApiResponse<CartResponse> removeFromCart(Long userId, Long productId) {
+  public ApiResponse<CartResponseDto> removeFromCart(Long userId, Long productId) {
 
     Cart cart = cartRepository.findByUserId(userId)
         .orElse(null);
@@ -102,7 +102,7 @@ public class CartServiceImpl implements ICartService {
    * Kullanıcının cart'ını getirir
    */
   @Override
-  public ApiResponse<CartResponse> getCart(Long userId) {
+  public ApiResponse<CartResponseDto> getCart(Long userId) {
 
     Cart cart = cartRepository.findByUserId(userId)
         .orElse(null);

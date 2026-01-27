@@ -7,11 +7,11 @@ import lombok.Getter;
 
 @Getter
 @Builder
-public class CartResponse
+public class CartResponseDto
 {
   private Long cartId;
   private Long userId;
   private BigDecimal totalPrice;
-  private List<CartItemResponse> items;
+  private List<CartItemResponseDto> items;
 
 }

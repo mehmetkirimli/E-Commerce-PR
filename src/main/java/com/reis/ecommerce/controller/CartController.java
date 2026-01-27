@@ -1,8 +1,8 @@
 package com.reis.ecommerce.controller;
 
 import com.reis.ecommerce.common.response.ApiResponse;
-import com.reis.ecommerce.dto.cart.AddToCartRequest;
-import com.reis.ecommerce.dto.cart.CartResponse;
+import com.reis.ecommerce.dto.cart.AddToCartRequestDto;
+import com.reis.ecommerce.dto.cart.CartResponseDto;
 import com.reis.ecommerce.service.cart.ICartService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -15,12 +15,12 @@ public class CartController {
   private final ICartService cartService;
 
   @PostMapping("/add")
-  public ApiResponse<CartResponse> addToCart(@RequestBody AddToCartRequest request) {
+  public ApiResponse<CartResponseDto> addToCart(@RequestBody AddToCartRequestDto request) {
     return cartService.addToCart(request);
   }
 
   @DeleteMapping("/remove/{userId}/{productId}")
-  public ApiResponse<CartResponse> removeFromCart(
+  public ApiResponse<CartResponseDto> removeFromCart(
       @PathVariable Long userId,
       @PathVariable Long productId
   ) {
@@ -28,7 +28,7 @@ public class CartController {
   }
 
   @GetMapping("/{userId}")
-  public ApiResponse<CartResponse> getCart(@PathVariable Long userId) {
+  public ApiResponse<CartResponseDto> getCart(@PathVariable Long userId) {
     return cartService.getCart(userId);
   }
 }

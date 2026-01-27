@@ -1,8 +1,8 @@
 package com.reis.ecommerce.common.mapper;
 
-import com.reis.ecommerce.dto.product.ProductListResponse;
-import com.reis.ecommerce.dto.product.ProductRequest;
-import com.reis.ecommerce.dto.product.ProductResponse;
+import com.reis.ecommerce.dto.product.ProductListResponseDto;
+import com.reis.ecommerce.dto.product.ProductRequestDto;
+import com.reis.ecommerce.dto.product.ProductResponseDto;
 import com.reis.ecommerce.model.Product;
 import org.springframework.stereotype.Component;
 
@@ -10,9 +10,9 @@ import org.springframework.stereotype.Component;
 public class ProductMapper
 {
   /**
-   * ProductRequest → Product (insert için)
+   * ProductRequestDto → Product (insert için)
    */
-  public static Product toEntity(ProductRequest request) {
+  public static Product toEntity(ProductRequestDto request) {
     return Product.builder()
         .name(request.getName())
         .price(request.getPrice())
@@ -23,9 +23,9 @@ public class ProductMapper
   }
 
   /**
-   * ProductRequest + existing Product → Product (update için)
+   * ProductRequestDto + existing Product → Product (update için)
    */
-  public static Product updateEntity(Product product, ProductRequest request) {
+  public static Product updateEntity(Product product, ProductRequestDto request) {
     product.setName(request.getName());
     product.setPrice(request.getPrice());
     product.setDescription(request.getDescription());
@@ -35,10 +35,10 @@ public class ProductMapper
   }
 
   /**
-   * Product → ProductResponse
+   * Product → ProductResponseDto
    */
-  public static ProductResponse toResponse(Product product) {
-    return ProductResponse.builder()
+  public static ProductResponseDto toResponse(Product product) {
+    return ProductResponseDto.builder()
         .id(product.getId())
         .name(product.getName())
         .price(product.getPrice())
@@ -49,10 +49,10 @@ public class ProductMapper
   }
 
   /**
-   * Product → ProductListResponse (liste dönüşü için performanslı DTO)
+   * Product → ProductListResponseDto (liste dönüşü için performanslı DTO)
    */
-  public static ProductListResponse toListResponse(Product product) {
-    return ProductListResponse.builder()
+  public static ProductListResponseDto toListResponse(Product product) {
+    return ProductListResponseDto.builder()
         .id(product.getId())
         .name(product.getName())
         .price(product.getPrice())

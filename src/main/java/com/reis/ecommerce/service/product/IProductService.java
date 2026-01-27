@@ -1,14 +1,14 @@
 package com.reis.ecommerce.service.product;
 
 import com.reis.ecommerce.common.response.ApiResponse;
-import com.reis.ecommerce.dto.product.ProductListResponse;
-import com.reis.ecommerce.dto.product.ProductRequest;
-import com.reis.ecommerce.dto.product.ProductResponse;
+import com.reis.ecommerce.dto.product.ProductListResponseDto;
+import com.reis.ecommerce.dto.product.ProductRequestDto;
+import com.reis.ecommerce.dto.product.ProductResponseDto;
 import java.util.List;
 
 public interface IProductService
 {
-  ApiResponse<ProductResponse> createProduct(ProductRequest request);
+  ApiResponse<ProductResponseDto> createProduct(ProductRequestDto request);
 
   /**
    * Ürünü güncelleme.
@@ -16,7 +16,7 @@ public interface IProductService
    *  - Retry
    *  - Mapper Pattern
    */
-  ApiResponse<ProductResponse> updateProduct(Long id, ProductRequest request);
+  ApiResponse<ProductResponseDto> updateProduct(Long id, ProductRequestDto request);
 
   /**
    * Ürünü silme (soft delete olabilir).
@@ -26,12 +26,12 @@ public interface IProductService
   /**
    * Ürün detayını getir.
    */
-  ApiResponse<ProductResponse> getProduct(Long id);
+  ApiResponse<ProductResponseDto> getProduct(Long id);
 
   /**
    * Ürün listesini getir.
    *  - Redis Cache burada devreye girer
    */
-  ApiResponse<List<ProductListResponse>> getAllProducts();
+  ApiResponse<List<ProductListResponseDto>> getAllProducts();
 
 }
