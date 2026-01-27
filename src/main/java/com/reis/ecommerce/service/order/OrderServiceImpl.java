@@ -5,6 +5,7 @@ import com.reis.ecommerce.common.response.ApiResponse;
 import com.reis.ecommerce.dto.order.CreateOrderRequestDto;
 import com.reis.ecommerce.dto.order.CreateOrderResponseDto;
 import com.reis.ecommerce.events.model.OrderCreatedEvent;
+import com.reis.ecommerce.events.publisher.OrderEventPublisher;
 import com.reis.ecommerce.model.Order;
 import com.reis.ecommerce.model.enumaration.OrderStatus;
 import com.reis.ecommerce.repository.OrderRepository;
