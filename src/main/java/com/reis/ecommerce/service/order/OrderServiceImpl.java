@@ -1,16 +1,17 @@
 package com.reis.ecommerce.service.order;
 
+import com.reis.ecommerce.common.aop.annotation.TrackPerformance;
 import com.reis.ecommerce.common.mapper.OrderMapper;
 import com.reis.ecommerce.common.response.ApiResponse;
 import com.reis.ecommerce.dto.order.CreateOrderRequestDto;
 import com.reis.ecommerce.dto.order.CreateOrderResponseDto;
 import com.reis.ecommerce.events.model.OrderCreatedEvent;
-import com.reis.ecommerce.events.publisher.OrderEventPublisher;
 import com.reis.ecommerce.model.Order;
-import com.reis.ecommerce.model.enumaration.OrderStatus;
 import com.reis.ecommerce.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -18,9 +19,11 @@ public class OrderServiceImpl implements IOrderService
 {
   private final OrderRepository orderRepository;
   private final OrderMapper orderMapper;
-  private final OrderEventPublisher orderEventPublisher;
+  private final ApplicationEventPublisher applicationEventPublisher;
 
+  @TrackPerformance // Performans izleme AOP'si
   @Override
+  @Transactional
   public ApiResponse<CreateOrderResponseDto> createOrder(CreateOrderRequestDto request)
   {
     Order order = orderMapper.toEntity(request); // request -> entity
@@ -29,7 +32,7 @@ public class OrderServiceImpl implements IOrderService
 
     OrderCreatedEvent event = orderMapper.toOrderCreatedEvent(savedOrder); // entity -> event
 
-    orderEventPublisher.publish(event); // event publish
+    applicationEventPublisher.publishEvent(event);
 
     CreateOrderResponseDto responseDto = orderMapper.toResponse(savedOrder); // entity -> responseDto
 
