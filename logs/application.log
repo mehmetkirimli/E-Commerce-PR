@@ -1,0 +1,226 @@
+2026-01-28 20:13:01
+        [background-preinit]
+        INFO 
+        o.h.validator.internal.util.Version
+        - HV000001: Hibernate Validator 8.0.3.Final
+2026-01-28 20:13:01
+        [main]
+        INFO 
+        c.r.ecommerce.EcommerceApplication
+        - Starting EcommerceApplication using Java 17.0.18 with PID 29724 (C:\Users\mehmet.kirimli\Desktop\Lefoonten\Deneme\java\E-Commerce\ecommerce\E-Commerce-PR\target\classes started by mehmet.kirimli in C:\Users\mehmet.kirimli\Desktop\Lefoonten\Deneme\java\E-Commerce\ecommerce\E-Commerce-PR)
+2026-01-28 20:13:01
+        [main]
+        INFO 
+        c.r.ecommerce.EcommerceApplication
+        - No active profile set, falling back to 1 default profile: "default"
+2026-01-28 20:13:04
+        [main]
+        INFO 
+        o.s.d.r.c.RepositoryConfigurationDelegate
+        - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-01-28 20:13:04
+        [main]
+        INFO 
+        o.s.d.r.c.RepositoryConfigurationDelegate
+        - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-28 20:13:04
+        [main]
+        INFO 
+        o.s.d.r.c.RepositoryConfigurationDelegate
+        - Finished Spring Data repository scanning in 330 ms. Found 7 JPA repository interfaces.
+2026-01-28 20:13:04
+        [main]
+        INFO 
+        o.s.d.r.c.RepositoryConfigurationDelegate
+        - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-01-28 20:13:04
+        [main]
+        INFO 
+        o.s.d.r.c.RepositoryConfigurationDelegate
+        - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-01-28 20:13:04
+        [main]
+        INFO 
+        o.s.d.r.c.RepositoryConfigurationExtensionSupport
+        - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.reis.ecommerce.repository.CartItemRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-01-28 20:13:04
+        [main]
+        INFO 
+        o.s.d.r.c.RepositoryConfigurationExtensionSupport
+        - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.reis.ecommerce.repository.CartRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-01-28 20:13:04
+        [main]
+        INFO 
+        o.s.d.r.c.RepositoryConfigurationExtensionSupport
+        - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.reis.ecommerce.repository.OrderItemRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-01-28 20:13:04
+        [main]
+        INFO 
+        o.s.d.r.c.RepositoryConfigurationExtensionSupport
+        - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.reis.ecommerce.repository.OrderRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-01-28 20:13:04
+        [main]
+        INFO 
+        o.s.d.r.c.RepositoryConfigurationExtensionSupport
+        - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.reis.ecommerce.repository.PaymentDetailRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-01-28 20:13:04
+        [main]
+        INFO 
+        o.s.d.r.c.RepositoryConfigurationExtensionSupport
+        - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.reis.ecommerce.repository.PaymentTransactionRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-01-28 20:13:04
+        [main]
+        INFO 
+        o.s.d.r.c.RepositoryConfigurationExtensionSupport
+        - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.reis.ecommerce.repository.ProductRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-01-28 20:13:04
+        [main]
+        INFO 
+        o.s.d.r.c.RepositoryConfigurationDelegate
+        - Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2026-01-28 20:13:07
+        [main]
+        INFO 
+        o.s.b.w.e.tomcat.TomcatWebServer
+        - Tomcat initialized with port 8080 (http)
+2026-01-28 20:13:07
+        [main]
+        INFO 
+        o.a.coyote.http11.Http11NioProtocol
+        - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-28 20:13:07
+        [main]
+        INFO 
+        o.a.catalina.core.StandardService
+        - Starting service [Tomcat]
+2026-01-28 20:13:07
+        [main]
+        INFO 
+        o.a.catalina.core.StandardEngine
+        - Starting Servlet engine: [Apache Tomcat/10.1.48]
+2026-01-28 20:13:07
+        [main]
+        INFO 
+        o.a.c.c.C.[Tomcat].[localhost].[/]
+        - Initializing Spring embedded WebApplicationContext
+2026-01-28 20:13:07
+        [main]
+        INFO 
+        o.s.b.w.s.c.ServletWebServerApplicationContext
+        - Root WebApplicationContext: initialization completed in 6541 ms
+2026-01-28 20:13:08
+        [main]
+        INFO 
+        o.h.jpa.internal.util.LogHelper
+        - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-28 20:13:08
+        [main]
+        INFO 
+        org.hibernate.Version
+        - HHH000412: Hibernate ORM core version 6.6.33.Final
+2026-01-28 20:13:09
+        [main]
+        INFO 
+        o.h.c.i.RegionFactoryInitiator
+        - HHH000026: Second-level cache disabled
+2026-01-28 20:13:10
+        [main]
+        INFO 
+        o.s.o.j.p.SpringPersistenceUnitInfo
+        - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-28 20:13:10
+        [main]
+        INFO 
+        com.zaxxer.hikari.HikariDataSource
+        - HikariPool-1 - Starting...
+2026-01-28 20:13:10
+        [main]
+        INFO 
+        com.zaxxer.hikari.pool.HikariPool
+        - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2079fcfc
+2026-01-28 20:13:10
+        [main]
+        INFO 
+        com.zaxxer.hikari.HikariDataSource
+        - HikariPool-1 - Start completed.
+2026-01-28 20:13:10
+        [main]
+        INFO 
+        o.hibernate.orm.connections.pooling
+        - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 14.20
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-28 20:13:12
+        [main]
+        INFO 
+        o.h.e.t.j.p.i.JtaPlatformInitiator
+        - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-28 20:13:13
+        [main]
+        INFO 
+        o.s.o.j.LocalContainerEntityManagerFactoryBean
+        - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-28 20:13:15
+        [main]
+        WARN 
+        o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext
+        - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'orderCreatedEventListener' defined in file [C:\Users\mehmet.kirimli\Desktop\Lefoonten\Deneme\java\E-Commerce\ecommerce\E-Commerce-PR\target\classes\com\reis\ecommerce\events\listener\OrderCreatedEventListener.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.reis.ecommerce.events.publisher.OrderEventPublisher' available: expected single matching bean but found 2: orderEventPublisherImpl,rabbitMqOrderEventPublisher
+2026-01-28 20:13:15
+        [main]
+        INFO 
+        o.s.o.j.LocalContainerEntityManagerFactoryBean
+        - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-28 20:13:15
+        [main]
+        INFO 
+        com.zaxxer.hikari.HikariDataSource
+        - HikariPool-1 - Shutdown initiated...
+2026-01-28 20:13:15
+        [main]
+        INFO 
+        com.zaxxer.hikari.HikariDataSource
+        - HikariPool-1 - Shutdown completed.
+2026-01-28 20:13:15
+        [main]
+        INFO 
+        o.a.catalina.core.StandardService
+        - Stopping service [Tomcat]
+2026-01-28 20:13:15
+        [main]
+        INFO 
+        o.s.b.a.l.ConditionEvaluationReportLogger
+        - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-01-28 20:13:15
+        [main]
+        ERROR
+        o.s.b.d.LoggingFailureAnalysisReporter
+        - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.reis.ecommerce.events.listener.OrderCreatedEventListener required a single bean, but 2 were found:
+	- orderEventPublisherImpl: defined in file [C:\Users\mehmet.kirimli\Desktop\Lefoonten\Deneme\java\E-Commerce\ecommerce\E-Commerce-PR\target\classes\com\reis\ecommerce\events\publisher\OrderEventPublisherImpl.class]
+	- rabbitMqOrderEventPublisher: defined in file [C:\Users\mehmet.kirimli\Desktop\Lefoonten\Deneme\java\E-Commerce\ecommerce\E-Commerce-PR\target\classes\com\reis\ecommerce\events\publisher\RabbitMqOrderEventPublisher.class]
+
+This may be due to missing parameter name information
+
+Action:
+
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+
+Ensure that your compiler is configured to use the '-parameters' flag.
+You may need to update both your build tool settings as well as your IDE.
+(See https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.1-Release-Notes#parameter-name-retention)
+
+

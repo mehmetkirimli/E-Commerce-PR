@@ -1,7 +1,6 @@
 package com.reis.ecommerce.common.aop.aspect;
 
 import com.reis.ecommerce.common.aop.annotation.TrackPerformance;
-import java.util.SequencedSet;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
