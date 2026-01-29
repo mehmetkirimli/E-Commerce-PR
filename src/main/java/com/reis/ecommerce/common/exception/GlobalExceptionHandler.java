@@ -3,6 +3,7 @@ package com.reis.ecommerce.common.exception;
 import com.reis.ecommerce.common.enumerations.MessageEnum;
 import com.reis.ecommerce.common.response.ApiResponse;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.OptimisticLockingFailureException;
 import org.springframework.http.HttpStatus;
@@ -96,9 +97,23 @@ public class GlobalExceptionHandler {
    * ⭐ Tüm kontrol edilemeyen hatalar (fallback)
    */
   @ExceptionHandler(Exception.class)
-  public ResponseEntity<ApiResponse<?>> handleGlobalException(Exception ex)
+  public ResponseEntity<ApiResponse<?>> handleGlobalException(Exception ex , HttpServletRequest request)
   {
-    log.error("UNEXPECTED ERROR:", ex);
+    String uri = request.getRequestURI();
+
+    //HTML / static / swagger isteklerine Dokunma
+    if (
+        uri.equals("/") ||
+            uri.endsWith(".html") ||
+            uri.endsWith(".ico") ||
+            uri.startsWith("/swagger") ||
+            uri.startsWith("/v3") ||
+            uri.startsWith("/webjars")
+    ) {
+      throw new RuntimeException(ex);
+    }
+
+    log.error("UNEXPECTED API ERROR:", ex);
     return new ResponseEntity<>(ApiResponse.fail(MessageEnum.ERROR),HttpStatus.INTERNAL_SERVER_ERROR);
   }
 }
