@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8089
 
 spring:
   datasource:
@@ -28,6 +28,6 @@ spring:
 
 logging:
   level:
-    root: DEBUG
+    root: INFO
     org.springframework.web: DEBUG
     org.hibernate.SQL: DEBUG   # istersen kapatırız
