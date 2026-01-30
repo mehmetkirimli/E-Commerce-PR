@@ -1,12 +1,12 @@
 Feature: Products API Test
 
   Scenario: Ürün listesini başarıyla getir
-    Given url 'http://localhost:8080/products'
+    Given url 'http://localhost:8089/products'
     When method get
     Then status 200
 
   Scenario: Yeni ürün başarılı şekilde eklenir
-    Given url 'http://localhost:8080/products'
+    Given url 'http://localhost:8089/products'
     And request
       """
       {
